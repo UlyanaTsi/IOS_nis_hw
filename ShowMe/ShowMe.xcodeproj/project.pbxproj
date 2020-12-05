@@ -14,7 +14,6 @@
 		A300D999257BEAD600007614 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A300D998257BEAD600007614 /* Assets.xcassets */; };
 		A300D99C257BEAD600007614 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A300D99A257BEAD600007614 /* LaunchScreen.storyboard */; };
 		A300D9A4257BEB7F00007614 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A300D9A3257BEB7F00007614 /* MessageViewController.swift */; };
-		A300D9A7257BFA5900007614 /* pic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A300D9A6257BFA5900007614 /* pic.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +26,6 @@
 		A300D99B257BEAD600007614 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A300D99D257BEAD600007614 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A300D9A3257BEB7F00007614 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
-		A300D9A6257BFA5900007614 /* pic.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = pic.jpg; path = ../../Downloads/pic.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,7 +42,6 @@
 		A300D983257BEACF00007614 = {
 			isa = PBXGroup;
 			children = (
-				A300D9A5257BFA3F00007614 /* assets */,
 				A300D98E257BEACF00007614 /* ShowMe */,
 				A300D98D257BEACF00007614 /* Products */,
 			);
@@ -71,14 +68,6 @@
 				A300D99D257BEAD600007614 /* Info.plist */,
 			);
 			path = ShowMe;
-			sourceTree = "<group>";
-		};
-		A300D9A5257BFA3F00007614 /* assets */ = {
-			isa = PBXGroup;
-			children = (
-				A300D9A6257BFA5900007614 /* pic.jpg */,
-			);
-			path = assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,7 +131,6 @@
 				A300D99C257BEAD600007614 /* LaunchScreen.storyboard in Resources */,
 				A300D999257BEAD600007614 /* Assets.xcassets in Resources */,
 				A300D997257BEACF00007614 /* Main.storyboard in Resources */,
-				A300D9A7257BFA5900007614 /* pic.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

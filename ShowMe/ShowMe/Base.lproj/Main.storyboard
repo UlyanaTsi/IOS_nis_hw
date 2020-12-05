@@ -81,19 +81,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pic.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="SpN-yr-ACl">
-                                <rect key="frame" x="20" y="521" width="374" height="252"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="252" id="J4h-3P-vQR"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="SpN-yr-ACl" firstAttribute="trailing" secondItem="4sb-kE-wLm" secondAttribute="trailing" id="6PA-zQ-iu8"/>
-                            <constraint firstItem="nof-fq-J7O" firstAttribute="bottom" secondItem="SpN-yr-ACl" secondAttribute="bottom" constant="89" id="6RS-6J-LLi"/>
                             <constraint firstItem="nof-fq-J7O" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="blm-D1-exb" secondAttribute="trailing" symbolic="YES" id="6ZE-By-NfN"/>
-                            <constraint firstItem="SpN-yr-ACl" firstAttribute="leading" secondItem="4sb-kE-wLm" secondAttribute="leading" id="GEc-UH-CaC"/>
                             <constraint firstItem="4sb-kE-wLm" firstAttribute="top" secondItem="blm-D1-exb" secondAttribute="bottom" constant="8" id="QSV-ov-vxG"/>
                             <constraint firstItem="blm-D1-exb" firstAttribute="top" secondItem="nof-fq-J7O" secondAttribute="top" constant="140" id="eZG-ic-Bir"/>
                             <constraint firstItem="nof-fq-J7O" firstAttribute="bottom" secondItem="4sb-kE-wLm" secondAttribute="bottom" constant="489" id="lOD-se-NeG"/>
@@ -131,7 +122,4 @@
             <point key="canvasLocation" x="1010" y="130"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="pic.jpg" width="564" height="530"/>
-    </resources>
 </document>
