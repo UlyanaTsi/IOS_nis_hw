@@ -1,0 +1,29 @@
+{
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "grid-size" : "regular"
+  },
+  "stickers" : [
+    {
+      "filename" : "жабка_1.sticker"
+    },
+    {
+      "filename" : "жабка_2.sticker"
+    },
+    {
+      "filename" : "рыбка.sticker"
+    },
+    {
+      "filename" : "heart_1.sticker"
+    },
+    {
+      "filename" : "heart_2.sticker"
+    },
+    {
+      "filename" : "heart_3.sticker"
+    }
+  ]
+}
