@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A3124D1525D85E8C000E447E /* TripGraamSticker StickerPackExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A3124D1425D85E8C000E447E /* TripGraamSticker StickerPackExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A3124D1925D85E8C000E447E /* Stickers.xcstickers in Resources */ = {isa = PBXBuildFile; fileRef = A3124D1825D85E8C000E447E /* Stickers.xcstickers */; };
+		A3124D1A25D85E8C000E447E /* Stickers.xcstickers in Resources */ = {isa = PBXBuildFile; fileRef = A3124D1825D85E8C000E447E /* Stickers.xcstickers */; };
 		A39C6EB825C6DFB1002CFBBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39C6EB725C6DFB1002CFBBF /* AppDelegate.swift */; };
 		A39C6EBA25C6DFB1002CFBBF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39C6EB925C6DFB1002CFBBF /* SceneDelegate.swift */; };
 		A39C6EBC25C6DFB1002CFBBF /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39C6EBB25C6DFB1002CFBBF /* TripViewController.swift */; };
@@ -17,7 +20,34 @@
 		A39C6ECE25C6E82D002CFBBF /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39C6ECD25C6E82D002CFBBF /* Trip.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		A3124D1625D85E8C000E447E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A39C6EAC25C6DFB1002CFBBF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A3124D1325D85E8C000E447E;
+			remoteInfo = "TripGraamSticker StickerPackExtension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A3124D1D25D85E8C000E447E /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A3124D1525D85E8C000E447E /* TripGraamSticker StickerPackExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		A3124D1125D85E8C000E447E /* TripGraamSticker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripGraamSticker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3124D1425D85E8C000E447E /* TripGraamSticker StickerPackExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "TripGraamSticker StickerPackExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3124D1825D85E8C000E447E /* Stickers.xcstickers */ = {isa = PBXFileReference; lastKnownFileType = folder.stickers; name = Stickers.xcstickers; path = "TripGraamSticker StickerPackExtension/Stickers.xcstickers"; sourceTree = "<group>"; };
 		A39C6EB425C6DFB1002CFBBF /* Tripgram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tripgram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A39C6EB725C6DFB1002CFBBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A39C6EB925C6DFB1002CFBBF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +91,7 @@
 		A39C6EAB25C6DFB1002CFBBF = {
 			isa = PBXGroup;
 			children = (
+				A3124D1825D85E8C000E447E /* Stickers.xcstickers */,
 				A39C6EB625C6DFB1002CFBBF /* Tripgram */,
 				A39C6EB525C6DFB1002CFBBF /* Products */,
 			);
@@ -70,6 +101,8 @@
 			isa = PBXGroup;
 			children = (
 				A39C6EB425C6DFB1002CFBBF /* Tripgram.app */,
+				A3124D1125D85E8C000E447E /* TripGraamSticker.app */,
+				A3124D1425D85E8C000E447E /* TripGraamSticker StickerPackExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -92,6 +125,38 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		A3124D1025D85E8C000E447E /* TripGraamSticker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A3124D2125D85E8C000E447E /* Build configuration list for PBXNativeTarget "TripGraamSticker" */;
+			buildPhases = (
+				A3124D0F25D85E8C000E447E /* Resources */,
+				A3124D1D25D85E8C000E447E /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A3124D1725D85E8C000E447E /* PBXTargetDependency */,
+			);
+			name = TripGraamSticker;
+			productName = TripGraamSticker;
+			productReference = A3124D1125D85E8C000E447E /* TripGraamSticker.app */;
+			productType = "com.apple.product-type.application.messages";
+		};
+		A3124D1325D85E8C000E447E /* TripGraamSticker StickerPackExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A3124D2025D85E8C000E447E /* Build configuration list for PBXNativeTarget "TripGraamSticker StickerPackExtension" */;
+			buildPhases = (
+				A3124D1225D85E8C000E447E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TripGraamSticker StickerPackExtension";
+			productName = "TripGraamSticker StickerPackExtension";
+			productReference = A3124D1425D85E8C000E447E /* TripGraamSticker StickerPackExtension.appex */;
+			productType = "com.apple.product-type.app-extension.messages-sticker-pack";
+		};
 		A39C6EB325C6DFB1002CFBBF /* Tripgram */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A39C6EC825C6DFB2002CFBBF /* Build configuration list for PBXNativeTarget "Tripgram" */;
@@ -119,6 +184,12 @@
 				LastUpgradeCheck = 1170;
 				ORGANIZATIONNAME = "Ульяна Цимбалистая";
 				TargetAttributes = {
+					A3124D1025D85E8C000E447E = {
+						CreatedOnToolsVersion = 11.7;
+					};
+					A3124D1325D85E8C000E447E = {
+						CreatedOnToolsVersion = 11.7;
+					};
 					A39C6EB325C6DFB1002CFBBF = {
 						CreatedOnToolsVersion = 11.7;
 					};
@@ -138,11 +209,29 @@
 			projectRoot = "";
 			targets = (
 				A39C6EB325C6DFB1002CFBBF /* Tripgram */,
+				A3124D1025D85E8C000E447E /* TripGraamSticker */,
+				A3124D1325D85E8C000E447E /* TripGraamSticker StickerPackExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A3124D0F25D85E8C000E447E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3124D1A25D85E8C000E447E /* Stickers.xcstickers in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A3124D1225D85E8C000E447E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3124D1925D85E8C000E447E /* Stickers.xcstickers in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A39C6EB225C6DFB1002CFBBF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -170,6 +259,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		A3124D1725D85E8C000E447E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A3124D1325D85E8C000E447E /* TripGraamSticker StickerPackExtension */;
+			targetProxy = A3124D1625D85E8C000E447E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		A39C6EBD25C6DFB1002CFBBF /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -190,6 +287,64 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		A3124D1B25D85E8C000E447E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NNW4HK6Y3H;
+				INFOPLIST_FILE = TripGraamSticker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nis.TripGraamSticker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A3124D1C25D85E8C000E447E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NNW4HK6Y3H;
+				INFOPLIST_FILE = TripGraamSticker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nis.TripGraamSticker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A3124D1E25D85E8C000E447E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NNW4HK6Y3H;
+				INFOPLIST_FILE = "TripGraamSticker StickerPackExtension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nis.TripGraamSticker.StickerPackExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A3124D1F25D85E8C000E447E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NNW4HK6Y3H;
+				INFOPLIST_FILE = "TripGraamSticker StickerPackExtension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nis.TripGraamSticker.StickerPackExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		A39C6EC625C6DFB2002CFBBF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -341,6 +496,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A3124D2025D85E8C000E447E /* Build configuration list for PBXNativeTarget "TripGraamSticker StickerPackExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A3124D1E25D85E8C000E447E /* Debug */,
+				A3124D1F25D85E8C000E447E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A3124D2125D85E8C000E447E /* Build configuration list for PBXNativeTarget "TripGraamSticker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A3124D1B25D85E8C000E447E /* Debug */,
+				A3124D1C25D85E8C000E447E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A39C6EAF25C6DFB1002CFBBF /* Build configuration list for PBXProject "Tripgram" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
