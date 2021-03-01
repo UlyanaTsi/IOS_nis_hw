@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  FavoriteBrandsView.swift
 //  KindCare
 //
 //  Created by Ульяна Цимбалистая on 01.03.2021.
@@ -8,14 +8,14 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct FavouriteBrandsView: View {
     var body: some View {
-        Text("Hello, World!")
+        Text("Favorite Brands")
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct FavouriteBrandsView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        FavouriteBrandsView()
     }
 }
