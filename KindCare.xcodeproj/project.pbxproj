@@ -3,10 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A30D44B72611DC8800E92DE2 /* CFBrands.csv in Resources */ = {isa = PBXBuildFile; fileRef = A30D44B62611DC8800E92DE2 /* CFBrands.csv */; };
+		A3440F5E25FA47A8005DCC98 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = A3440F5D25FA47A8005DCC98 /* SQLite */; };
+		A3471E8625FCE83A009AA406 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3471E8525FCE83A009AA406 /* ImagePicker.swift */; };
+		A363D4DB25FE7E8D00B56956 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A363D4DA25FE7E8D00B56956 /* SearchBar.swift */; };
+		A363D4DD25FE8EA400B56956 /* BrandViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A363D4DC25FE8EA400B56956 /* BrandViewModel.swift */; };
 		A36C4B7425EC4A0D009DCBDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36C4B7325EC4A0D009DCBDA /* AppDelegate.swift */; };
 		A36C4B7625EC4A0D009DCBDA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36C4B7525EC4A0D009DCBDA /* SceneDelegate.swift */; };
 		A36C4B7925EC4A0D009DCBDA /* KindCare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A36C4B7725EC4A0D009DCBDA /* KindCare.xcdatamodeld */; };
@@ -28,11 +33,18 @@
 		A36C4BB125EC54DA009DCBDA /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36C4BB025EC54DA009DCBDA /* View+Extensions.swift */; };
 		A36C4BB325EC5519009DCBDA /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36C4BB225EC5519009DCBDA /* Date+Extension.swift */; };
 		A36C4BB525EC5550009DCBDA /* ItemUpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36C4BB425EC5550009DCBDA /* ItemUpdateView.swift */; };
-		A36C4BBB25EC59A0009DCBDA /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36C4BBA25EC59A0009DCBDA /* ItemDetailView.swift */; };
 		A36C4BBD25EC5B2D009DCBDA /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36C4BBC25EC5B2D009DCBDA /* AddItemView.swift */; };
+		A3B52E2426108A92003D056C /* BrandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B52E2326108A92003D056C /* BrandView.swift */; };
+		A3B52E2B2610BC3C003D056C /* Brand+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B52E292610BC3C003D056C /* Brand+CoreDataClass.swift */; };
+		A3B52E2C2610BC3C003D056C /* Brand+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B52E2A2610BC3C003D056C /* Brand+CoreDataProperties.swift */; };
+		A3B6C3672610F57B000DA721 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B6C3662610F57B000DA721 /* ButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A30D44B62611DC8800E92DE2 /* CFBrands.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CFBrands.csv; sourceTree = "<group>"; };
+		A3471E8525FCE83A009AA406 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		A363D4DA25FE7E8D00B56956 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		A363D4DC25FE8EA400B56956 /* BrandViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandViewModel.swift; sourceTree = "<group>"; };
 		A36C4B7025EC4A0D009DCBDA /* KindCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KindCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A36C4B7325EC4A0D009DCBDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A36C4B7525EC4A0D009DCBDA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,8 +68,11 @@
 		A36C4BB025EC54DA009DCBDA /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		A36C4BB225EC5519009DCBDA /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		A36C4BB425EC5550009DCBDA /* ItemUpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemUpdateView.swift; sourceTree = "<group>"; };
-		A36C4BBA25EC59A0009DCBDA /* ItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
 		A36C4BBC25EC5B2D009DCBDA /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
+		A3B52E2326108A92003D056C /* BrandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandView.swift; sourceTree = "<group>"; };
+		A3B52E292610BC3C003D056C /* Brand+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Brand+CoreDataClass.swift"; path = "../../Brand+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A3B52E2A2610BC3C003D056C /* Brand+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Brand+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A3B6C3662610F57B000DA721 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,12 +80,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3440F5E25FA47A8005DCC98 /* SQLite in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A363D4D825FE7A1500B56956 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A3B52E292610BC3C003D056C /* Brand+CoreDataClass.swift */,
+				A3B52E2A2610BC3C003D056C /* Brand+CoreDataProperties.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		A36C4B6725EC4A0D009DCBDA = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +115,8 @@
 		A36C4B7225EC4A0D009DCBDA /* KindCare */ = {
 			isa = PBXGroup;
 			children = (
+				A3B6C368261105C6000DA721 /* Data */,
+				A363D4D825FE7A1500B56956 /* Model */,
 				A36C4BAC25EC547B009DCBDA /* Extensions */,
 				A36C4B9F25EC5279009DCBDA /* ViewModel */,
 				A36C4B9625EC4CCD009DCBDA /* View */,
@@ -98,9 +125,7 @@
 				A36C4B7C25EC4A11009DCBDA /* Assets.xcassets */,
 				A36C4B8125EC4A11009DCBDA /* LaunchScreen.storyboard */,
 				A36C4B8425EC4A11009DCBDA /* Info.plist */,
-				A36C4B7725EC4A0D009DCBDA /* KindCare.xcdatamodeld */,
 				A36C4B7E25EC4A11009DCBDA /* Preview Content */,
-				A36C4BA825EC53EB009DCBDA /* CoreDataManager.swift */,
 			);
 			path = KindCare;
 			sourceTree = "<group>";
@@ -116,6 +141,8 @@
 		A36C4B9625EC4CCD009DCBDA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A363D4DA25FE7E8D00B56956 /* SearchBar.swift */,
+				A3471E8525FCE83A009AA406 /* ImagePicker.swift */,
 				A36C4B9425EC4CC7009DCBDA /* TextViews.swift */,
 				A36C4B9025EC4B3B009DCBDA /* ImageViews.swift */,
 				A36C4B8E25EC4B20009DCBDA /* UserShelfView.swift */,
@@ -124,8 +151,9 @@
 				A36C4B9B25EC4DE8009DCBDA /* SearchBrandsView.swift */,
 				A36C4B9D25EC4E13009DCBDA /* FavoriteBrandsView.swift */,
 				A36C4BB425EC5550009DCBDA /* ItemUpdateView.swift */,
-				A36C4BBA25EC59A0009DCBDA /* ItemDetailView.swift */,
 				A36C4BBC25EC5B2D009DCBDA /* AddItemView.swift */,
+				A3B52E2326108A92003D056C /* BrandView.swift */,
+				A3B6C3662610F57B000DA721 /* ButtonView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -136,6 +164,7 @@
 				A36C4BA425EC5356009DCBDA /* AddItemViewModel.swift */,
 				A36C4BA625EC53C6009DCBDA /* UpdateItemViewModel.swift */,
 				A36C4BAA25EC546D009DCBDA /* ItemsListViewModel.swift */,
+				A363D4DC25FE8EA400B56956 /* BrandViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -148,6 +177,16 @@
 				A36C4BB225EC5519009DCBDA /* Date+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A3B6C368261105C6000DA721 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				A30D44B62611DC8800E92DE2 /* CFBrands.csv */,
+				A36C4BA825EC53EB009DCBDA /* CoreDataManager.swift */,
+				A36C4B7725EC4A0D009DCBDA /* KindCare.xcdatamodeld */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,6 +205,9 @@
 			dependencies = (
 			);
 			name = KindCare;
+			packageProductDependencies = (
+				A3440F5D25FA47A8005DCC98 /* SQLite */,
+			);
 			productName = KindCare;
 			productReference = A36C4B7025EC4A0D009DCBDA /* KindCare.app */;
 			productType = "com.apple.product-type.application";
@@ -194,6 +236,9 @@
 				Base,
 			);
 			mainGroup = A36C4B6725EC4A0D009DCBDA;
+			packageReferences = (
+				A3440F5C25FA47A8005DCC98 /* XCRemoteSwiftPackageReference "SQLite.swift" */,
+			);
 			productRefGroup = A36C4B7125EC4A0D009DCBDA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -209,6 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A36C4B8325EC4A11009DCBDA /* LaunchScreen.storyboard in Resources */,
+				A30D44B72611DC8800E92DE2 /* CFBrands.csv in Resources */,
 				A36C4B8025EC4A11009DCBDA /* Preview Assets.xcassets in Resources */,
 				A36C4B7D25EC4A11009DCBDA /* Assets.xcassets in Resources */,
 			);
@@ -221,23 +267,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3471E8625FCE83A009AA406 /* ImagePicker.swift in Sources */,
 				A36C4B9E25EC4E13009DCBDA /* FavoriteBrandsView.swift in Sources */,
 				A36C4BA525EC5356009DCBDA /* AddItemViewModel.swift in Sources */,
 				A36C4BA725EC53C6009DCBDA /* UpdateItemViewModel.swift in Sources */,
 				A36C4B7425EC4A0D009DCBDA /* AppDelegate.swift in Sources */,
 				A36C4B7925EC4A0D009DCBDA /* KindCare.xcdatamodeld in Sources */,
 				A36C4B9525EC4CC7009DCBDA /* TextViews.swift in Sources */,
+				A3B52E2B2610BC3C003D056C /* Brand+CoreDataClass.swift in Sources */,
 				A36C4BB125EC54DA009DCBDA /* View+Extensions.swift in Sources */,
+				A3B52E2C2610BC3C003D056C /* Brand+CoreDataProperties.swift in Sources */,
 				A36C4B9125EC4B3B009DCBDA /* ImageViews.swift in Sources */,
+				A363D4DD25FE8EA400B56956 /* BrandViewModel.swift in Sources */,
 				A36C4BA925EC53EB009DCBDA /* CoreDataManager.swift in Sources */,
+				A3B52E2426108A92003D056C /* BrandView.swift in Sources */,
 				A36C4BB325EC5519009DCBDA /* Date+Extension.swift in Sources */,
-				A36C4BBB25EC59A0009DCBDA /* ItemDetailView.swift in Sources */,
 				A36C4BB525EC5550009DCBDA /* ItemUpdateView.swift in Sources */,
 				A36C4B9325EC4C97009DCBDA /* ContentView.swift in Sources */,
 				A36C4B8F25EC4B20009DCBDA /* UserShelfView.swift in Sources */,
 				A36C4B9C25EC4DE8009DCBDA /* SearchBrandsView.swift in Sources */,
+				A363D4DB25FE7E8D00B56956 /* SearchBar.swift in Sources */,
 				A36C4BAB25EC546D009DCBDA /* ItemsListViewModel.swift in Sources */,
 				A36C4BAE25EC54A5009DCBDA /* NSManagedContext+Extensions.swift in Sources */,
+				A3B6C3672610F57B000DA721 /* ButtonView.swift in Sources */,
 				A36C4B7B25EC4A0D009DCBDA /* MainView.swift in Sources */,
 				A36C4B7625EC4A0D009DCBDA /* SceneDelegate.swift in Sources */,
 				A36C4BBD25EC5B2D009DCBDA /* AddItemView.swift in Sources */,
@@ -434,6 +486,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A3440F5C25FA47A8005DCC98 /* XCRemoteSwiftPackageReference "SQLite.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.12.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A3440F5D25FA47A8005DCC98 /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A3440F5C25FA47A8005DCC98 /* XCRemoteSwiftPackageReference "SQLite.swift" */;
+			productName = SQLite;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		A36C4B7725EC4A0D009DCBDA /* KindCare.xcdatamodeld */ = {

@@ -8,17 +8,22 @@
 
 import SwiftUI
 
+/*
+ Картинки кнопок
+ */
 struct BarImage: View {
     var imageName : String!
     var body: some View {
         Image(imageName)
-            .frame(width: 40, height: 40, alignment: .center)
+            .frame(minWidth: 0, maxWidth: 40, minHeight: 0, maxHeight: 40)
             .foregroundColor(Color.init("BlueCustom"))
-            .font(.largeTitle)
-            .padding(.top)
+            .font(.title)
     }
 }
 
+/*
+ Изображения со скругленными углами
+ */
 struct RoundedImage: View {
     var imageName : String!
     var body: some View {
@@ -31,8 +36,8 @@ struct RoundedImage: View {
 struct ImageViews_Previews: PreviewProvider {
     static var previews: some View {
         VStack{
-            BarImage(imageName: "search")
             RoundedImage(imageName: "default")
+            BarImage(imageName: "search")
         }
     }
 }

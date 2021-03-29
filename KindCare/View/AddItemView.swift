@@ -8,59 +8,94 @@
 
 import SwiftUI
 
+/*
+ View добавление продукта в список.
+ */
 struct AddItemView: View {
     @Environment(\.presentationMode) var presentationMode
-    @ObservedObject private var addItemtVM = AddItemViewModel()
+    @ObservedObject private var addItemVM = AddItemViewModel()
     
-    @State private var selectedDate = Date()
+    @State private var showingImagePicker = false
+    @State private var image: Image?
+    @State private var data: Data?
+    
+    // Загрузка изображения.
+    func loadImage(){
+        guard let data = data else { return}
+        
+        image = Image(uiImage: UIImage(data: data) ?? UIImage(imageLiteralResourceName: "default"))
+    }
     
     var body: some View {
         VStack {
-            RoundedImage(imageName: "default")
-                .frame(width: 370, height: 370)
-                .padding(.bottom)
-            
-            HStack {
-                Text("Добавьте название: ")
-                .frame(width: 175, height: 30, alignment: .leading)
-                .font(.custom("SF-Pro", size: 18))
-                .padding(.leading)
-                
-                TextField("", text: $addItemtVM.itemName)
-                    .frame(width: 175 , height: 30, alignment: .leading)
-                    .font(.custom("SF-Pro", size: 18))
-                    .padding(.trailing)
+            // Добавление изображения
+            if image != nil {
+                image?
+                    .resizable()
+                    .cornerRadius(10)
+                    .frame(minWidth: 0, maxWidth: 350, minHeight: 0, maxHeight: 350, alignment: .topLeading)
+                    .padding(EdgeInsets(top: 15, leading: 15, bottom: 0, trailing: 15))
+            } else {
+                Button(action: {
+                    self.showingImagePicker = true
+                }) {
+                    Image(systemName: "photo")
+                        .frame(width: 50, height: 50, alignment: .center)
+                        .foregroundColor(Color.init("BlueCustom"))
+                        .font(.largeTitle)
+                }
+                .padding(EdgeInsets(top: 0, leading: 0, bottom: 40, trailing: 0))
             }
             
-            Divider()
-            
-            DatePicker(selection: $addItemtVM.itemOpenDate, in: ...Date(), displayedComponents: .date) {
-                Text("")
-            }  .padding(.trailing)
-            
-            Divider()
-            
-            HStack {
-                Text("Количество месяцев на упаковке:")
-                    .frame(width: 200, height: 60, alignment: .leading)
-                    .font(.custom("SF-Pro", size: 18))
-                    .padding(.leading)
-                
-                TextField("", value: $addItemtVM.itemMonths, formatter: NumberFormatter())
+            // Поле для названия
+            TextField("Название", text: $addItemVM.itemName)
+                .padding(.leading)
+                .frame(minWidth: 0, maxWidth: 350, minHeight: 0, maxHeight: 50)
                 .font(.custom("SF-Pro", size: 20))
-                .padding(.leading)
-            }
+                .overlay(RoundedRectangle(cornerRadius: 15)
+                    .stroke(Color.init("PinkCustom"), lineWidth: 1))
             
-            Button("Добавить") {
-                let saved = self.addItemtVM.saveItem()
+            Spacer()
+                .frame(height: 20)
+            
+            // Выбор даты открытия
+            DatePicker("", selection: $addItemVM.itemOpenDate, in: ...Date(), displayedComponents: .date)
+                .labelsHidden()
+            
+            Spacer()
+                .frame(height: 20)
+            
+            // Поле срока годности
+            TextField("Количество месяцев", text: $addItemVM.itemMonths)
+                .keyboardType(.numberPad)
+                .padding(.leading)
+                .frame(minWidth: 0, maxWidth: 350, minHeight: 0, maxHeight: 50)
+                .font(.custom("SF-Pro", size: 20))
+                .overlay(RoundedRectangle(cornerRadius: 15)
+                    .stroke(Color.init("PinkCustom"), lineWidth: 1))
+            
+            Spacer()
+                .frame(height: 60)
+            
+            // Кнопка добавить
+            Button(action: {
+                if self.data != nil {
+                    self.addItemVM.itemImage = self.data!
+                }
+                
+                let saved = self.addItemVM.saveItem()
                 if saved {
                     self.presentationMode.wrappedValue.dismiss()
                 }
+            }) {
+                ButtonView(text: "Добавить")
             }
-            .foregroundColor(Color.init("BlueCustom"))
-            .font(.custom("SF-Pro", size: 20))
-            .padding(.top)
-        }.padding()
+            .padding(.bottom)
+        }
+        .sheet(isPresented: $showingImagePicker,
+               onDismiss: loadImage){
+                ImagePicker(data: self.$data)
+        }
     }
 }
 

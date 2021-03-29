@@ -9,18 +9,26 @@
 import Foundation
 
 extension Date {
+    /*
+     Добаляет к дате количество переданных месяцев
+     */
     func adding(_ component: Calendar.Component, value: Int, using calendar: Calendar = .current) -> Date {
-        print(value)
         return calendar.date(byAdding: component, value: value, to: self)!
     }
     
-    func getFormattedDate(format: String) -> String {
-            let formatter = DateFormatter()
-            formatter.dateFormat = format
-            return formatter.string(from: self)
+    /*
+     Форматирование даты в строку
+     */
+    func getStringDate(format: String) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = format
+        return formatter.string(from: self)
     }
     
-    func toStringDate(string: String) -> Date{
+    /*
+     Форматирование строки в дату
+     */
+    func formatDate(string: String) -> Date{
         let formatter = DateFormatter()
         let format = "MMM d, yyyy"
         formatter.dateFormat = format

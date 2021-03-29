@@ -7,11 +7,17 @@
 //
 
 import Foundation
+import SwiftUI
 
+/*
+ ViewModel списка элемента.
+ */
 class ItemsListViewModel: ObservableObject {
-    
     @Published var items = [ItemViewModel]()
     
+    /*
+     Удаление элемента.
+     */
     func deleteItem(_ itemVM: ItemViewModel) -> Bool {
         
         var deleted = false
@@ -19,25 +25,24 @@ class ItemsListViewModel: ObservableObject {
         do {
             try CoreDataManager.shared.deleteItem(item: itemVM.item)
             deleted = true
-        } catch {
-            print(error.localizedDescription)
-        }
+        } catch {}
         
         return deleted
-        
     }
     
+    /*
+     Fetch элементов.
+     */
     func fetchAllItems() {
         DispatchQueue.main.async {
             self.items = CoreDataManager.shared.getItems().map(ItemViewModel.init)
         }
     }
-    
 }
 
-
-
-
+/*
+ ViewModel элемента.
+ */
 class ItemViewModel {
     
     var item: Item
@@ -53,7 +58,6 @@ class ItemViewModel {
         }
         
         return itemId.uuidString
-        
     }
     
     var name: String {
@@ -68,4 +72,7 @@ class ItemViewModel {
         self.item.months
     }
     
+    var image: Data{
+        self.item.image ?? UIImage(named: "default")!.pngData()!
+    }
 }

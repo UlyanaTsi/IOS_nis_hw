@@ -8,7 +8,18 @@
 
 import SwiftUI
 
+/*
+ Главный вид - контейнер для всех остальных.
+ */
 struct MainView: View {
+    
+    init() {
+        UITabBar.appearance().barTintColor = UIColor.white
+        UINavigationBar.appearance().backgroundColor = UIColor.white
+        UITableView.appearance().separatorColor = UIColor(named: "RoseCustom")
+    }
+    
+    // Меню
     var body: some View {
         TabView{
             UserShelfView()
@@ -25,7 +36,8 @@ struct MainView: View {
                     BarImage(imageName: "heart")
             }
             
-        }.accentColor(Color.init("BlueCustom"))
+        }
+        .accentColor(Color.init("BlueCustom"))
     }
 }
 

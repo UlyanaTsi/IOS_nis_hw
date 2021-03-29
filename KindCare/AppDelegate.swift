@@ -12,10 +12,17 @@ import CoreData
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Если данные уже были загружены, то загружать снова не надо.
+        let defaults = UserDefaults.standard
+        let isPreloaded = defaults.bool(forKey: "isPreloaded")
+        if !isPreloaded {
+            preloadData()
+            defaults.set(true, forKey: "isPreloaded")
+        }
+        
         return true
     }
 
@@ -31,6 +38,74 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the user discards a scene session.
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+    }
+    
+    //MARK: - CSV
+    
+    /*
+     Парсинг файла в формате csv
+     */
+    func parseCSV (contentsOfURL: NSURL, encoding: String.Encoding, error: NSErrorPointer) -> [(name:String, isCrueltyFree:String, isVegan: String)]? {
+        
+        let delimiter = ";"
+        var items:[(name:String, isCrueltyFree:String, isVegan: String)]?
+        if let content = try? String(contentsOf: contentsOfURL as URL, encoding: encoding) {
+            items = []
+            let lines:[String] = content.components(separatedBy: NSCharacterSet.newlines) as [String]
+            for line in lines {
+                var values:[String] = []
+                if line != "" {
+                     values = line.components(separatedBy: delimiter)
+                    let item = (name: values[0], isCrueltyFree: values[1], isVegan: values[2])
+                    items?.append(item)
+                }
+            }
+        }
+        return items
+    }
+    
+    /*
+     Загрука данных из csv в coredata
+     */
+    func preloadData () {
+        if let contentsOfURL = Bundle.main.url(forResource: "CFBrands", withExtension: "csv") {
+            
+            removeData()
+            
+            var error:NSError?
+            if let items = parseCSV(contentsOfURL: contentsOfURL as NSURL, encoding: String.Encoding.utf8, error: &error) {
+                // Preload the menu items
+                let managedObjectContext = persistentContainer.viewContext
+                    for item in items {
+                        let brand = Brand(context: managedObjectContext)
+                        brand.name = item.name
+                        brand.isCrueltyFree = item.isCrueltyFree
+                        brand.isVegan = item.isVegan
+                    }
+                
+                do {
+                    try managedObjectContext.save()
+                } catch let nserror as NSError {
+                    fatalError("Что-то не сохраняется \(nserror)")
+                }
+            }
+        }
+    }
+     
+    /*
+     Очистка данных, для избежания дублирования.
+     */
+    func removeData() {
+        let managedObjectContext = persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<Brand>(entityName: "Brand")
+        
+        do{
+            let brands = try managedObjectContext.fetch(fetchRequest)
+            
+            for brand in brands {
+                managedObjectContext.delete(brand)
+            }
+        } catch {}
     }
 
     // MARK: - Core Data stack
@@ -63,7 +138,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }()
 
     // MARK: - Core Data Saving support
-
     func saveContext () {
         let context = persistentContainer.viewContext
         if context.hasChanges {

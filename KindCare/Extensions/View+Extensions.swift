@@ -9,6 +9,7 @@
 import Foundation
 import SwiftUI
 
+// Для небольшого уменьшения количества контейнеров.
 extension View {
     func embedInNavigationView() -> some View{
         NavigationView{self}

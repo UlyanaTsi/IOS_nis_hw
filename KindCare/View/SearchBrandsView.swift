@@ -8,9 +8,33 @@
 
 import SwiftUI
 
+/*
+ View cо строкой поиска по брендам.
+ */
 struct SearchBrandsView: View {
+    // Получеам список брендов.
+    @FetchRequest(entity: Brand.entity(), sortDescriptors: [
+        NSSortDescriptor(keyPath: \Brand.name, ascending: true)
+    ]) var brands: FetchedResults<Brand>
+    
+    @State private var searchText : String = ""
+    
     var body: some View {
-        Text("Search Brands")
+        VStack{
+            SearchBar(text: $searchText)
+            .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
+            
+            List(brands.filter({ searchText.isEmpty ? false : $0.name!.contains(searchText) })) { (brand : Brand) in
+                
+                // При нажатии на ячейку бренда откроется страница с детальной информацией.
+                NavigationLink(destination: BrandView(brand: brand)){
+                    Text("\(brand.name!)")
+                    .font(.custom("SF-Pro", size: 18))
+                }
+            }
+        }
+        .navigationBarTitle("Поиск")
+        .embedInNavigationView()
     }
 }
 
