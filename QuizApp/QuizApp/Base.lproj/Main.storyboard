@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZVc-s5-c9T">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="XJ7-ER-ZOq">
+            <objects>
+                <viewController id="ZVc-s5-c9T" customClass="ViewController" customModule="QuizApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Bd3-pt-T4b">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gm1-fz-ynG">
+                                <rect key="frame" x="0.0" y="227" width="375" height="244"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="X39-ad-Ie8">
+                                    <size key="itemSize" width="300" height="200"/>
+                                    <size key="estimatedItemSize" width="300" height="200"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="aZj-R6-Hj9" customClass="QuestionCell" customModule="QuizApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="22" width="300" height="200"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Iab-hP-diO">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fja-R9-Mln" userLabel="QuestionView">
+                                                    <rect key="frame" x="8" y="8" width="284" height="184"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Вопрос" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZH-le-D1B" userLabel="qustion">
+                                                            <rect key="frame" x="28" y="50" width="227" height="83"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.54096736082739727" green="0.21034752304794518" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Fja-R9-Mln" secondAttribute="trailing" constant="8" id="0w8-JY-iBi"/>
+                                                <constraint firstItem="Fja-R9-Mln" firstAttribute="top" secondItem="Iab-hP-diO" secondAttribute="top" constant="8" id="CCx-W6-gXg"/>
+                                                <constraint firstAttribute="bottom" secondItem="Fja-R9-Mln" secondAttribute="bottom" constant="8" id="HKR-Mx-C0g"/>
+                                                <constraint firstItem="Fja-R9-Mln" firstAttribute="leading" secondItem="Iab-hP-diO" secondAttribute="leading" constant="8" id="nDH-10-k86"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="questionLabel" destination="nZH-le-D1B" id="ttu-6a-t5C"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="ZVc-s5-c9T" id="zHr-D5-Hpd"/>
+                                    <outlet property="delegate" destination="ZVc-s5-c9T" id="v7D-On-8JU"/>
+                                </connections>
+                            </collectionView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ответ" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Yy-6l-foP">
+                                <rect key="frame" x="82" y="531.5" width="211" height="20.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.54096736079999996" green="0.21034752300000001" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6Yy-6l-foP" firstAttribute="leading" secondItem="PLT-2S-55C" secondAttribute="leading" constant="82" id="Efy-vc-Dfz"/>
+                            <constraint firstItem="PLT-2S-55C" firstAttribute="bottom" secondItem="gm1-fz-ynG" secondAttribute="bottom" constant="196" id="MST-Lw-2d1"/>
+                            <constraint firstItem="gm1-fz-ynG" firstAttribute="leading" secondItem="PLT-2S-55C" secondAttribute="leading" id="k8y-T7-3jW"/>
+                            <constraint firstItem="gm1-fz-ynG" firstAttribute="centerX" secondItem="Bd3-pt-T4b" secondAttribute="centerX" id="l6b-eo-j3E"/>
+                            <constraint firstItem="gm1-fz-ynG" firstAttribute="top" secondItem="PLT-2S-55C" secondAttribute="top" constant="227" id="vAx-GW-xi6"/>
+                            <constraint firstItem="PLT-2S-55C" firstAttribute="trailing" secondItem="6Yy-6l-foP" secondAttribute="trailing" constant="82" id="vcs-Au-YkJ"/>
+                            <constraint firstItem="PLT-2S-55C" firstAttribute="bottom" secondItem="6Yy-6l-foP" secondAttribute="bottom" constant="115" id="vyg-be-rnM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="PLT-2S-55C"/>
+                    </view>
+                    <connections>
+                        <outlet property="answerLabel" destination="6Yy-6l-foP" id="Ouc-cG-Bd5"/>
+                        <outlet property="collectionView" destination="gm1-fz-ynG" id="ZoQ-8Z-9dg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W95-mh-KVt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1336.8" y="-279.31034482758622"/>
+        </scene>
+    </scenes>
+</document>
