@@ -22,6 +22,7 @@ extension Date {
     func getStringDate(format: String) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = format
+        formatter.locale = Locale(identifier: "ru_RU")
         return formatter.string(from: self)
     }
     

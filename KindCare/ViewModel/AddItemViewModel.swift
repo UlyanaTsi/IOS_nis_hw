@@ -16,6 +16,8 @@ import SwiftUI
 class AddItemViewModel : ObservableObject{
     // Название
     var itemName : String = ""
+    // ID
+    private var itemId : String = ""
     // Дата открытия
     var itemOpenDate : Date = Date()
     // Срок годности
@@ -26,6 +28,7 @@ class AddItemViewModel : ObservableObject{
     private var item : Item {
         let item = Item(context: CoreDataManager.shared.moc)
         item.itemId = UUID()
+        itemId = item.itemId!.uuidString
         item.name = itemName
         item.openDate = itemOpenDate
         item.image = itemImage
@@ -41,6 +44,10 @@ class AddItemViewModel : ObservableObject{
     func saveItem() -> Bool {
         do {
             try CoreDataManager.shared.saveItem(item: item)
+            
+            let date = itemOpenDate.adding(.month, value: Int(itemMonths) ?? 0)
+            NotificationManager.shared.setNotification(date: date, name: itemName, id: itemId)
+            
             return true
         } catch {}
         

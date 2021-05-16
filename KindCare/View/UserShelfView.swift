@@ -22,12 +22,13 @@ struct UserShelfView: View {
     /*
      Удаление объекта.
      */
-    private func deleteItem(at indexSet: IndexSet) {
+    private func deleteItem(at index: IndexSet) {
         var deleted = false
         
-        indexSet.forEach { index in
+        index.forEach { index in
             let item = itemListVM.items[index]
             deleted = itemListVM.deleteItem(item)
+            NotificationManager.shared.removeNotification(id: item.itemId)
         }
         
         if deleted {
@@ -36,32 +37,35 @@ struct UserShelfView: View {
     }
     
     var body: some View {
-        VStack {
-            List {
-                ForEach(itemListVM.items, id: \.itemId) { item in
-                    NavigationLink(destination: ItemUpdateView(item: item)) {
-                        
-                        ItemCellView(itemName: item.name, itemDate: item.date, itemMonths: item.months, itemImage: item.image)
-                    }
-                }.onDelete(perform: self.deleteItem)
+        NavigationView{
+            VStack {
+                List {
+                    ForEach(itemListVM.items, id: \.itemId) { item in
+                        NavigationLink(destination: ItemUpdateView(item: item)) {
+                            
+                            ItemCellView(itemName: item.name, itemDate: item.date, itemMonths: item.months, itemImage: item.image)
+                        }
+                    }.onDelete(perform: self.deleteItem)
+                }
+                    
+                .onAppear {
+                    self.itemListVM.fetchAllItems()
+                }
+                    
+                .sheet(isPresented: $isPresented, onDismiss: {
+                    self.itemListVM.fetchAllItems()
+                }) {
+                    AddItemView()
+                }
             }
-                
-            .onAppear {
-                self.itemListVM.fetchAllItems()
-            }
-                
-            .sheet(isPresented: $isPresented, onDismiss: {
-                self.itemListVM.fetchAllItems()
-            }) {
-                AddItemView()
-            }
+            .navigationBarTitle("Полка")
+            .navigationBarItems(leading: Text(""), trailing: Button(action: { self.isPresented = true }) {
+                Image(systemName: "plus")
+                    .imageScale(.large)
+            })
+            
         }
-        .navigationBarTitle("Моя полка")
-        .navigationBarItems(leading: Text(""), trailing: Button(action: { self.isPresented = true }) {
-            Image(systemName: "plus")
-                .imageScale(.large)
-        })
-            .embedInNavigationView()
+        .navigationBarColor(backgroundColor: .white, titleColor: UIColor(named: "PinkCustom") )
     }
 }
 
@@ -87,11 +91,5 @@ struct ItemCellView: View {
                 MainText(text: itemDate.adding(.month, value: Int(itemMonths)).getStringDate(format: "MMM d, yyyy"))
             }
         }
-    }
-}
-
-struct UserShelfView_Previews: PreviewProvider {
-    static var previews: some View {
-        UserShelfView()
     }
 }

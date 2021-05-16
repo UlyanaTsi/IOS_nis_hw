@@ -18,6 +18,7 @@ struct BarImage: View {
             .frame(minWidth: 0, maxWidth: 40, minHeight: 0, maxHeight: 40)
             .foregroundColor(Color.init("BlueCustom"))
             .font(.title)
+            .padding(.top)
     }
 }
 
@@ -30,14 +31,5 @@ struct RoundedImage: View {
         Image(imageName)
             .resizable()
             .cornerRadius(10)
-    }
-}
-
-struct ImageViews_Previews: PreviewProvider {
-    static var previews: some View {
-        VStack{
-            RoundedImage(imageName: "default")
-            BarImage(imageName: "search")
-        }
     }
 }

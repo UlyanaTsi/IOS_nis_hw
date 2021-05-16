@@ -10,16 +10,16 @@ import Foundation
 import Combine
 
 /*
-ViewModel бренда.
-*/
+ ViewModel бренда.
+ */
 class BrandViewModel : ObservableObject{
     /*
-    Список брендов
-    */
+     Список брендов
+     */
     @Published private (set) var brands: [Brand] = []
     
     /*
-    ViewModel списка элемента.
-    */
+     Текст поиска бренда
+     */
     @Published var searchText: String = String()
 }

@@ -14,7 +14,7 @@ import SwiftUI
 struct ItemUpdateView: View {
     let item : ItemViewModel
     @ObservedObject private var updateItemVM = UpdateItemViewModel()
-    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.presentationMode) private var presentationMode
     
     @State private var itemViewState = ItemViewState()
     @State private var showingImagePicker = false
@@ -22,7 +22,7 @@ struct ItemUpdateView: View {
     @State private var data: Data?
     
     // Загрузка изображение.
-    func loadImage(){
+    private func loadImage(){
         guard let data = data else { return }
         
         image = Image(uiImage: (UIImage(data: data) ?? UIImage(data: self.itemViewState.itemImage)) ?? UIImage(imageLiteralResourceName: "default"))
@@ -113,9 +113,10 @@ struct ItemUpdateView: View {
                 HStack {
                     Image("chevron.backward")
                         .imageScale(.large)
+                        .frame(width: 30, height: 50)
                 }
         })
-            .sheet(isPresented: $showingImagePicker, onDismiss: loadImage){
+        .sheet(isPresented: $showingImagePicker, onDismiss: loadImage){
                 ImagePicker(data: self.$data) }
     }
 }

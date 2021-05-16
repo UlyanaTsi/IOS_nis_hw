@@ -44,7 +44,7 @@ struct ContentView: View {
 }
 
 /*
- View с приветсвием и краткой информацией о приложении.
+ View с приветствием и краткой информацией о приложении.
  */
 struct WelcomeScreen: View {
     @Environment(\.presentationMode) private var presentationMode

@@ -12,7 +12,24 @@ import SwiftUI
  Реализация ImagePicker с помощью UIImagePickerController
  */
 struct ImagePicker : UIViewControllerRepresentable{
-    class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    @Environment(\.presentationMode) internal var presentationMode
+    @Binding internal var data: Data?
+    
+    internal func makeCoordinator() -> Coordinator
+    {
+        return Coordinator(self)
+    }
+    
+    internal func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePicker>) -> UIImagePickerController {
+        let picker = UIImagePickerController()
+        picker.delegate = context.coordinator
+        return picker
+    }
+    
+    internal func updateUIViewController(_ uiViewController: UIImagePickerController, context: UIViewControllerRepresentableContext<ImagePicker>){
+    }
+    
+    internal class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
         let parent: ImagePicker
         
         init(_ parent: ImagePicker) {
@@ -26,20 +43,6 @@ struct ImagePicker : UIViewControllerRepresentable{
             
             parent.presentationMode.wrappedValue.dismiss()
         }
-    }
-    
-    @Environment(\.presentationMode) var presentationMode
-    @Binding var data: Data?
-    
-    func makeCoordinator() -> Coordinator{ Coordinator(self)}
-    
-    func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePicker>) -> UIImagePickerController {
-        let picker = UIImagePickerController()
-        picker.delegate = context.coordinator
-        return picker
-    }
-    
-    func updateUIViewController(_ uiViewController: UIImagePickerController, context: UIViewControllerRepresentableContext<ImagePicker>){
     }
 }
 

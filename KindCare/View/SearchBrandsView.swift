@@ -20,21 +20,22 @@ struct SearchBrandsView: View {
     @State private var searchText : String = ""
     
     var body: some View {
-        VStack{
-            SearchBar(text: $searchText)
-            .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
-            
-            List(brands.filter({ searchText.isEmpty ? false : $0.name!.contains(searchText) })) { (brand : Brand) in
-                
-                // При нажатии на ячейку бренда откроется страница с детальной информацией.
-                NavigationLink(destination: BrandView(brand: brand)){
-                    Text("\(brand.name!)")
-                    .font(.custom("SF-Pro", size: 18))
+            VStack{
+                SearchBar(text: $searchText)
+                .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
+
+                List(brands.filter({ searchText.isEmpty ? false : $0.name!.lowercased().contains(searchText.lowercased()) })) { (brand : Brand) in
+
+                    // При нажатии на ячейку бренда откроется страница с детальной информацией.
+                    NavigationLink(destination: BrandView(brand: brand)){
+                        Text("\(brand.name!)")
+                        .font(.custom("SF-Pro", size: 18))
+                    }
                 }
             }
-        }
-        .navigationBarTitle("Поиск")
-        .embedInNavigationView()
+            .navigationBarTitle("Поиск")
+            .embedInNavigationView()
+//        .navigationBarColor(backgroundColor: UIColor(named: "PinkCustom"), titleColor: .white)
     }
 }
 

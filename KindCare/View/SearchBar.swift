@@ -15,19 +15,19 @@ import SwiftUI
 struct SearchBar : UIViewRepresentable {
     @Binding var text : String
     
-    func searchBar(_ searchBar: UISearchBar,
+    private func searchBar(_ searchBar: UISearchBar,
                    textDidChange searchText: String) {
         text = searchText
     }
     
-    func makeCoordinator() -> Cordinator {
-        return Cordinator(text: $text)
+    internal func makeCoordinator() -> Coordinator {
+        return Coordinator(text: $text)
     }
     
     /*
      Создание view
      */
-    func makeUIView(context: UIViewRepresentableContext<SearchBar>)
+    internal func makeUIView(context: UIViewRepresentableContext<SearchBar>)
         -> UISearchBar {
             
             let searchBar = UISearchBar(frame: .zero)
@@ -44,17 +44,19 @@ struct SearchBar : UIViewRepresentable {
     /*
      Обновляет view при вводе текста
      */
-    func updateUIView(_ uiView: UISearchBar,
+    internal func updateUIView(_ uiView: UISearchBar,
                       context: UIViewRepresentableContext<SearchBar>) {
         uiView.text = text
     }
     
-    class Cordinator : NSObject, UISearchBarDelegate {
+    internal class Coordinator : NSObject, UISearchBarDelegate {
         @Binding var text : String
+        
         init(text : Binding<String>)
         {
             _text = text
         }
+        
         func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String)
         {
             text = searchText
@@ -63,11 +65,5 @@ struct SearchBar : UIViewRepresentable {
         func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
             searchBar.endEditing(true)
         }
-    }
-}
-
-struct SearchBar_Previews: PreviewProvider {
-    static var previews: some View {
-        SearchBar(text: .constant("Hello"))
     }
 }

@@ -13,7 +13,7 @@ import SwiftUI
  */
 struct ButtonView: View {
     let text : String
-    let colors = Gradient(colors: [Color.init("PinkCustom"), Color.init("OrangeCustom")])
+    private let colors = Gradient(colors: [Color.init("PinkCustom"), Color.init("OrangeCustom")])
     var body: some View {
         Text(text)
             .font(.custom("SF-Pro", size: 20))

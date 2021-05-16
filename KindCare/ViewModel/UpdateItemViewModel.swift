@@ -21,6 +21,12 @@ class UpdateItemViewModel : ObservableObject{
         do{
             let intMonths = Int64(viewState.itemMonths) ?? 0
             try CoreDataManager.shared.updateItem(id: viewState.itemId, name: viewState.itemName, date: viewState.itemOpenDate, months: intMonths, image: viewState.itemImage)
+            
+            let date = viewState.itemOpenDate.adding(.month, value: Int(intMonths))
+            
+            NotificationManager.shared.removeNotification(id: viewState.itemId)
+            NotificationManager.shared.setNotification(date: date, name: viewState.itemName, id: viewState.itemId)
+            
             return true
         } catch {}
         

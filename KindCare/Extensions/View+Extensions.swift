@@ -14,4 +14,8 @@ extension View {
     func embedInNavigationView() -> some View{
         NavigationView{self}
     }
+    
+    func navigationBarColor(backgroundColor: UIColor?, titleColor: UIColor?) -> some View {
+        self.modifier(NavigationBarModifier(backgroundColor: backgroundColor, titleColor: titleColor))
+    }
 }

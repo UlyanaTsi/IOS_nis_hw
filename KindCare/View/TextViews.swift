@@ -49,19 +49,8 @@ struct HeaderText: View{
     var body: some View {
         VStack{
             Text(text)
-                .font(.title)
+                .font(.custom("Futura", size: 18))
                 .fontWeight(.bold)
-        }
-    }
-}
-
-struct TextViews_Previews: PreviewProvider {
-    static var previews: some View {
-        VStack{
-            TextViews()
-            MainText(text: "Название бренда")
-            MainText(text: "Дата открытия")
-            HeaderText(text: "Поиск")
         }
     }
 }

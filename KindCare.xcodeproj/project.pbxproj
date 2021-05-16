@@ -3,13 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		811192EADCEF0C8CDADE02C4 /* Pods_KindCare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86C2E21EE00BF4AA1E571958 /* Pods_KindCare.framework */; };
+		A3006CFC2628604000E82725 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3006CFB2628604000E82725 /* GoogleService-Info.plist */; };
 		A30D44B72611DC8800E92DE2 /* CFBrands.csv in Resources */ = {isa = PBXBuildFile; fileRef = A30D44B62611DC8800E92DE2 /* CFBrands.csv */; };
-		A3440F5E25FA47A8005DCC98 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = A3440F5D25FA47A8005DCC98 /* SQLite */; };
 		A3471E8625FCE83A009AA406 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3471E8525FCE83A009AA406 /* ImagePicker.swift */; };
+		A34BEC7C263AF8D4001A222A /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34BEC7B263AF8D4001A222A /* NotificationManager.swift */; };
 		A363D4DB25FE7E8D00B56956 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A363D4DA25FE7E8D00B56956 /* SearchBar.swift */; };
 		A363D4DD25FE8EA400B56956 /* BrandViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A363D4DC25FE8EA400B56956 /* BrandViewModel.swift */; };
 		A36C4B7425EC4A0D009DCBDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36C4B7325EC4A0D009DCBDA /* AppDelegate.swift */; };
@@ -34,15 +36,22 @@
 		A36C4BB325EC5519009DCBDA /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36C4BB225EC5519009DCBDA /* Date+Extension.swift */; };
 		A36C4BB525EC5550009DCBDA /* ItemUpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36C4BB425EC5550009DCBDA /* ItemUpdateView.swift */; };
 		A36C4BBD25EC5B2D009DCBDA /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36C4BBC25EC5B2D009DCBDA /* AddItemView.swift */; };
+		A379CF01264C189F004E12D9 /* Brand+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A379CF00264C189F004E12D9 /* Brand+CoreDataClass.swift */; };
+		A379CF03264CA0F5004E12D9 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A379CF02264CA0F5004E12D9 /* FirebaseManager.swift */; };
+		A379CF05264CA36B004E12D9 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A379CF04264CA36B004E12D9 /* FileManager.swift */; };
 		A3B52E2426108A92003D056C /* BrandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B52E2326108A92003D056C /* BrandView.swift */; };
-		A3B52E2B2610BC3C003D056C /* Brand+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B52E292610BC3C003D056C /* Brand+CoreDataClass.swift */; };
 		A3B52E2C2610BC3C003D056C /* Brand+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B52E2A2610BC3C003D056C /* Brand+CoreDataProperties.swift */; };
 		A3B6C3672610F57B000DA721 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B6C3662610F57B000DA721 /* ButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		86C2E21EE00BF4AA1E571958 /* Pods_KindCare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KindCare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		97B47699D188075642EB8F02 /* Pods-KindCare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KindCare.release.xcconfig"; path = "Target Support Files/Pods-KindCare/Pods-KindCare.release.xcconfig"; sourceTree = "<group>"; };
+		A3006CFB2628604000E82725 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A30D44B62611DC8800E92DE2 /* CFBrands.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CFBrands.csv; sourceTree = "<group>"; };
 		A3471E8525FCE83A009AA406 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		A34BDD692637231E00044768 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		A34BEC7B263AF8D4001A222A /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		A363D4DA25FE7E8D00B56956 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		A363D4DC25FE8EA400B56956 /* BrandViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandViewModel.swift; sourceTree = "<group>"; };
 		A36C4B7025EC4A0D009DCBDA /* KindCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KindCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,10 +78,13 @@
 		A36C4BB225EC5519009DCBDA /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		A36C4BB425EC5550009DCBDA /* ItemUpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemUpdateView.swift; sourceTree = "<group>"; };
 		A36C4BBC25EC5B2D009DCBDA /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
+		A379CF00264C189F004E12D9 /* Brand+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Brand+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A379CF02264CA0F5004E12D9 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		A379CF04264CA36B004E12D9 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		A3B52E2326108A92003D056C /* BrandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandView.swift; sourceTree = "<group>"; };
-		A3B52E292610BC3C003D056C /* Brand+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Brand+CoreDataClass.swift"; path = "../../Brand+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A3B52E2A2610BC3C003D056C /* Brand+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Brand+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A3B6C3662610F57B000DA721 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		B899C58AE8E3F6B34A9A7016 /* Pods-KindCare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KindCare.debug.xcconfig"; path = "Target Support Files/Pods-KindCare/Pods-KindCare.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,17 +92,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A3440F5E25FA47A8005DCC98 /* SQLite in Frameworks */,
+				811192EADCEF0C8CDADE02C4 /* Pods_KindCare.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E66367F0AFEF7ED284B2764 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B899C58AE8E3F6B34A9A7016 /* Pods-KindCare.debug.xcconfig */,
+				97B47699D188075642EB8F02 /* Pods-KindCare.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A363D4D825FE7A1500B56956 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A3B52E292610BC3C003D056C /* Brand+CoreDataClass.swift */,
+				A379CF00264C189F004E12D9 /* Brand+CoreDataClass.swift */,
 				A3B52E2A2610BC3C003D056C /* Brand+CoreDataProperties.swift */,
 			);
 			path = Model;
@@ -101,6 +122,8 @@
 			children = (
 				A36C4B7225EC4A0D009DCBDA /* KindCare */,
 				A36C4B7125EC4A0D009DCBDA /* Products */,
+				1E66367F0AFEF7ED284B2764 /* Pods */,
+				D379657B77E01ACC2AC41AB8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,6 +138,7 @@
 		A36C4B7225EC4A0D009DCBDA /* KindCare */ = {
 			isa = PBXGroup;
 			children = (
+				A397DA7726402B79000372EF /* Manager */,
 				A3B6C368261105C6000DA721 /* Data */,
 				A363D4D825FE7A1500B56956 /* Model */,
 				A36C4BAC25EC547B009DCBDA /* Extensions */,
@@ -124,6 +148,7 @@
 				A36C4B7525EC4A0D009DCBDA /* SceneDelegate.swift */,
 				A36C4B7C25EC4A11009DCBDA /* Assets.xcassets */,
 				A36C4B8125EC4A11009DCBDA /* LaunchScreen.storyboard */,
+				A3006CFB2628604000E82725 /* GoogleService-Info.plist */,
 				A36C4B8425EC4A11009DCBDA /* Info.plist */,
 				A36C4B7E25EC4A11009DCBDA /* Preview Content */,
 			);
@@ -179,14 +204,32 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		A397DA7726402B79000372EF /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				A36C4BA825EC53EB009DCBDA /* CoreDataManager.swift */,
+				A34BEC7B263AF8D4001A222A /* NotificationManager.swift */,
+				A379CF02264CA0F5004E12D9 /* FirebaseManager.swift */,
+				A379CF04264CA36B004E12D9 /* FileManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		A3B6C368261105C6000DA721 /* Data */ = {
 			isa = PBXGroup;
 			children = (
 				A30D44B62611DC8800E92DE2 /* CFBrands.csv */,
-				A36C4BA825EC53EB009DCBDA /* CoreDataManager.swift */,
 				A36C4B7725EC4A0D009DCBDA /* KindCare.xcdatamodeld */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		D379657B77E01ACC2AC41AB8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				86C2E21EE00BF4AA1E571958 /* Pods_KindCare.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,9 +239,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A36C4B8725EC4A11009DCBDA /* Build configuration list for PBXNativeTarget "KindCare" */;
 			buildPhases = (
+				BF2264BB14837C261098BEED /* [CP] Check Pods Manifest.lock */,
 				A36C4B6C25EC4A0D009DCBDA /* Sources */,
 				A36C4B6D25EC4A0D009DCBDA /* Frameworks */,
 				A36C4B6E25EC4A0D009DCBDA /* Resources */,
+				BC06ED6D876ADEA6F04F903B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -206,7 +251,6 @@
 			);
 			name = KindCare;
 			packageProductDependencies = (
-				A3440F5D25FA47A8005DCC98 /* SQLite */,
 			);
 			productName = KindCare;
 			productReference = A36C4B7025EC4A0D009DCBDA /* KindCare.app */;
@@ -234,10 +278,10 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = A36C4B6725EC4A0D009DCBDA;
 			packageReferences = (
-				A3440F5C25FA47A8005DCC98 /* XCRemoteSwiftPackageReference "SQLite.swift" */,
 			);
 			productRefGroup = A36C4B7125EC4A0D009DCBDA /* Products */;
 			projectDirPath = "";
@@ -255,6 +299,7 @@
 			files = (
 				A36C4B8325EC4A11009DCBDA /* LaunchScreen.storyboard in Resources */,
 				A30D44B72611DC8800E92DE2 /* CFBrands.csv in Resources */,
+				A3006CFC2628604000E82725 /* GoogleService-Info.plist in Resources */,
 				A36C4B8025EC4A11009DCBDA /* Preview Assets.xcassets in Resources */,
 				A36C4B7D25EC4A11009DCBDA /* Assets.xcassets in Resources */,
 			);
@@ -262,26 +307,71 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		BC06ED6D876ADEA6F04F903B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KindCare/Pods-KindCare-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KindCare/Pods-KindCare-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KindCare/Pods-KindCare-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF2264BB14837C261098BEED /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KindCare-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A36C4B6C25EC4A0D009DCBDA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				A3471E8625FCE83A009AA406 /* ImagePicker.swift in Sources */,
+				A379CF01264C189F004E12D9 /* Brand+CoreDataClass.swift in Sources */,
 				A36C4B9E25EC4E13009DCBDA /* FavoriteBrandsView.swift in Sources */,
 				A36C4BA525EC5356009DCBDA /* AddItemViewModel.swift in Sources */,
 				A36C4BA725EC53C6009DCBDA /* UpdateItemViewModel.swift in Sources */,
 				A36C4B7425EC4A0D009DCBDA /* AppDelegate.swift in Sources */,
 				A36C4B7925EC4A0D009DCBDA /* KindCare.xcdatamodeld in Sources */,
 				A36C4B9525EC4CC7009DCBDA /* TextViews.swift in Sources */,
-				A3B52E2B2610BC3C003D056C /* Brand+CoreDataClass.swift in Sources */,
 				A36C4BB125EC54DA009DCBDA /* View+Extensions.swift in Sources */,
 				A3B52E2C2610BC3C003D056C /* Brand+CoreDataProperties.swift in Sources */,
 				A36C4B9125EC4B3B009DCBDA /* ImageViews.swift in Sources */,
+				A379CF05264CA36B004E12D9 /* FileManager.swift in Sources */,
 				A363D4DD25FE8EA400B56956 /* BrandViewModel.swift in Sources */,
+				A34BEC7C263AF8D4001A222A /* NotificationManager.swift in Sources */,
 				A36C4BA925EC53EB009DCBDA /* CoreDataManager.swift in Sources */,
 				A3B52E2426108A92003D056C /* BrandView.swift in Sources */,
 				A36C4BB325EC5519009DCBDA /* Date+Extension.swift in Sources */,
+				A379CF03264CA0F5004E12D9 /* FirebaseManager.swift in Sources */,
 				A36C4BB525EC5550009DCBDA /* ItemUpdateView.swift in Sources */,
 				A36C4B9325EC4C97009DCBDA /* ContentView.swift in Sources */,
 				A36C4B8F25EC4B20009DCBDA /* UserShelfView.swift in Sources */,
@@ -303,6 +393,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				A36C4B8225EC4A11009DCBDA /* Base */,
+				A34BDD692637231E00044768 /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -314,6 +405,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -374,6 +466,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -426,6 +519,7 @@
 		};
 		A36C4B8825EC4A11009DCBDA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B899C58AE8E3F6B34A9A7016 /* Pods-KindCare.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -433,6 +527,7 @@
 				DEVELOPMENT_TEAM = NNW4HK6Y3H;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = KindCare/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -440,12 +535,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = nis.KindCare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		A36C4B8925EC4A11009DCBDA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97B47699D188075642EB8F02 /* Pods-KindCare.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -453,6 +549,7 @@
 				DEVELOPMENT_TEAM = NNW4HK6Y3H;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = KindCare/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -460,7 +557,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = nis.KindCare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -486,25 +583,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		A3440F5C25FA47A8005DCC98 /* XCRemoteSwiftPackageReference "SQLite.swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/stephencelis/SQLite.swift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.12.2;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		A3440F5D25FA47A8005DCC98 /* SQLite */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A3440F5C25FA47A8005DCC98 /* XCRemoteSwiftPackageReference "SQLite.swift" */;
-			productName = SQLite;
-		};
-/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		A36C4B7725EC4A0D009DCBDA /* KindCare.xcdatamodeld */ = {

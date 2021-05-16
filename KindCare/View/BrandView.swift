@@ -12,9 +12,9 @@ import SwiftUI
  View детальной информации о бренде
  */
 struct BrandView: View {
-    @Environment(\.presentationMode) var presentationMode
-    @Environment(\.managedObjectContext) var context
-    @State var isFavorite : Bool = false
+    @Environment(\.presentationMode) private var presentationMode
+    @Environment(\.managedObjectContext) private var context
+    @State private var isFavorite : Bool = false
     
     let brand : Brand
     
@@ -23,15 +23,22 @@ struct BrandView: View {
     }
     
     // Проверка веганский ли бренд.
-    func checkIfVegan() -> Bool{
+    private func checkIfVegan() -> Bool{
         if (brand.isVegan == "vegan"){
             return true;
         }
         return false;
     }
     
+    // Сохранение бренда с измененным параметром isFavorite.
+    private func saveBrand(){
+        do{
+            try context.save()
+        } catch { print("not saved")}
+    }
+    
     var body: some View {
-        VStack{
+        ScrollView{
             VStack{
                 Spacer()
                     .frame(height: 40)
@@ -53,7 +60,7 @@ struct BrandView: View {
                         RoundedImage(imageName: "leaf")
                             .frame(minWidth: 60, maxWidth: 60, minHeight: 60, maxHeight: 60, alignment: .leading)
                         
-                        Text("Веганский продукт")
+                        Text("Веган")
                             .font(.custom("SF-Pro", size: 18))
                             .frame(minWidth: 0, maxWidth: 350, minHeight: 0, maxHeight: 30, alignment: .leading)
                     }
@@ -80,6 +87,7 @@ struct BrandView: View {
                 HStack {
                     Image("chevron.backward")
                         .imageScale(.large)
+                        .frame(width: 30, height: 50)
                 }
             },trailing:
             Button(action:{
@@ -90,13 +98,6 @@ struct BrandView: View {
                 Image(systemName: self.brand.isFavorite || self.isFavorite ? "bookmark.fill" : "bookmark")
                     .imageScale(.large)
         })
-    }
-    
-    // Сохранение бренда с измененным параметром isFavorite.
-    func saveBrand(){
-        do{
-            try context.save()
-        } catch { print("not saved")}
     }
 }
 
