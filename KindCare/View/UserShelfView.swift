@@ -14,6 +14,7 @@ import SwiftUI
 struct UserShelfView: View {
     @ObservedObject private var itemListVM = ItemsListViewModel()
     @State private var isPresented: Bool = false
+    @State private var tabBar: UITabBar! = nil
     
     init() {
         UINavigationBar.appearance().tintColor = UIColor(named: "BlueCustom")
@@ -41,8 +42,11 @@ struct UserShelfView: View {
             VStack {
                 List {
                     ForEach(itemListVM.items, id: \.itemId) { item in
-                        NavigationLink(destination: ItemUpdateView(item: item)) {
-                            
+                        NavigationLink(destination:
+                            ItemUpdateView(item: item)
+                                .onAppear { self.tabBar.isHidden = true }
+                                .onDisappear { self.tabBar.isHidden = false }
+                        ) {
                             ItemCellView(itemName: item.name, itemDate: item.date, itemMonths: item.months, itemImage: item.image)
                         }
                     }.onDelete(perform: self.deleteItem)
@@ -61,11 +65,14 @@ struct UserShelfView: View {
             .navigationBarTitle("Полка")
             .navigationBarItems(leading: Text(""), trailing: Button(action: { self.isPresented = true }) {
                 Image(systemName: "plus")
-                    .imageScale(.large)
-            })
-            
+                    .imageScale(.large) })
         }
-        .navigationBarColor(backgroundColor: .white, titleColor: UIColor(named: "PinkCustom") )
+            .background(TabBarAccessor { tabbar in
+                DispatchQueue.main.async {
+                    self.tabBar = tabbar
+                }
+            })
+            .navigationBarColor(backgroundColor: .white, titleColor: UIColor(named: "PinkCustom") )
     }
 }
 

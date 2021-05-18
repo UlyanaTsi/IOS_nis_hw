@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import Combine
 
 /*
  View добавление продукта в список.
@@ -15,6 +16,7 @@ struct AddItemView: View {
     @Environment(\.presentationMode) var presentationMode
     @ObservedObject private var addItemVM = AddItemViewModel()
     
+    @State private var showAlert = false
     @State private var showingImagePicker = false
     @State private var image: Image?
     @State private var data: Data?
@@ -67,7 +69,6 @@ struct AddItemView: View {
             
             // Поле срока годности
             TextField("Количество месяцев", text: $addItemVM.itemMonths)
-                .keyboardType(.numberPad)
                 .padding(.leading)
                 .frame(minWidth: 0, maxWidth: 350, minHeight: 0, maxHeight: 50)
                 .font(.custom("SF-Pro", size: 20))
@@ -83,10 +84,15 @@ struct AddItemView: View {
                     self.addItemVM.itemImage = self.data!
                 }
                 
-                let saved = self.addItemVM.saveItem()
-                if saved {
-                    self.presentationMode.wrappedValue.dismiss()
+                if (self.addItemVM.itemMonths.count <= 2 && Int(self.addItemVM.itemMonths) != nil && self.addItemVM.itemName.count > 0) {
+                    let saved = self.addItemVM.saveItem()
+                    if saved {
+                        self.presentationMode.wrappedValue.dismiss()
+                    }
+                } else {
+                    self.showAlert = true
                 }
+                
             }) {
                 ButtonView(text: "Добавить")
             }
@@ -94,8 +100,14 @@ struct AddItemView: View {
         }
         .sheet(isPresented: $showingImagePicker,
                onDismiss: loadImage){
-                ImagePicker(data: self.$data)
-        }
+                ImagePicker(data: self.$data) }
+        .alert(isPresented: $showAlert, content : {
+            Alert(
+                title: Text("Ошибка"),
+                message: Text("Пожалуйста, проверьте верность заполненных данных."),
+                dismissButton: .default(Text("OK"))
+            )
+        })
     }
 }
 

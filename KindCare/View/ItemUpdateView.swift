@@ -16,6 +16,7 @@ struct ItemUpdateView: View {
     @ObservedObject private var updateItemVM = UpdateItemViewModel()
     @Environment(\.presentationMode) private var presentationMode
     
+    @State private var showAlert = false
     @State private var itemViewState = ItemViewState()
     @State private var showingImagePicker = false
     @State private var image: Image?
@@ -30,6 +31,9 @@ struct ItemUpdateView: View {
     
     var body: some View {
         VStack{
+            Spacer()
+                .frame(height: 10)
+            
             // Если изображение новое, покажет его, иначе картинка продукта.
             if image != nil{
                 image?
@@ -70,7 +74,6 @@ struct ItemUpdateView: View {
             
             // Поле для изменерния срока годности.
             TextField("\(item.months)", text: $itemViewState.itemMonths)
-                .keyboardType(.numberPad)
                 .padding(.leading)
                 .frame(minWidth: 0, maxWidth: 350, minHeight: 0, maxHeight: 50)
                 .font(.custom("SF-Pro", size: 20))
@@ -86,12 +89,15 @@ struct ItemUpdateView: View {
                     self.itemViewState.itemImage = self.data!
                 }
                 
-                self.itemViewState.itemId = self.item.itemId
-                
-                let updated = self.updateItemVM.update(viewState: self.itemViewState)
-                
-                if updated{
-                    self.presentationMode.wrappedValue.dismiss()
+                if (self.itemViewState.itemMonths.count <= 2  && Int(self.itemViewState.itemMonths) != nil && self.itemViewState.itemName.count > 0){
+                    self.itemViewState.itemId = self.item.itemId
+                    
+                    let updated = self.updateItemVM.update(viewState: self.itemViewState)
+                    if updated{
+                        self.presentationMode.wrappedValue.dismiss()
+                    }
+                } else {
+                    self.showAlert = true
                 }
             }){
                 ButtonView(text: "Сохранить")
@@ -116,8 +122,15 @@ struct ItemUpdateView: View {
                         .frame(width: 30, height: 50)
                 }
         })
-        .sheet(isPresented: $showingImagePicker, onDismiss: loadImage){
+            .sheet(isPresented: $showingImagePicker, onDismiss: loadImage){
                 ImagePicker(data: self.$data) }
+            .alert(isPresented: $showAlert, content : {
+                Alert(
+                    title: Text("Ошибка"),
+                    message: Text("Пожалуйста, проверьте верность заполненных данных."),
+                    dismissButton: .default(Text("OK"))
+                )
+            })
     }
 }
 

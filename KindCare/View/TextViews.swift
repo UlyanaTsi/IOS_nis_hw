@@ -18,6 +18,7 @@ struct TextViews: View {
                 .font(.custom("SF-Pro", size: 20))
             Text("Kind Care")
                 .fontWeight(.bold)
+                .font(.custom("SF-Pro", size: 20))
             Text("С помощью Kind Care ты можешь легко находить cruelty-free и vegan косметику")
                 .multilineTextAlignment(.center)
                 .frame(minWidth: 0, maxWidth: 300, minHeight: 0, maxHeight: 90)

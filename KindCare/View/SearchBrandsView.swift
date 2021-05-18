@@ -16,7 +16,7 @@ struct SearchBrandsView: View {
     @FetchRequest(entity: Brand.entity(), sortDescriptors: [
         NSSortDescriptor(keyPath: \Brand.name, ascending: true)
     ]) var brands: FetchedResults<Brand>
-    
+    @State private var tabBar: UITabBar! = nil
     @State private var searchText : String = ""
     
     var body: some View {
@@ -27,15 +27,23 @@ struct SearchBrandsView: View {
                 List(brands.filter({ searchText.isEmpty ? false : $0.name!.lowercased().contains(searchText.lowercased()) })) { (brand : Brand) in
 
                     // При нажатии на ячейку бренда откроется страница с детальной информацией.
-                    NavigationLink(destination: BrandView(brand: brand)){
+                    NavigationLink(destination:
+                        BrandView(brand: brand)
+                            .onAppear { self.tabBar.isHidden = true }
+                            .onDisappear { self.tabBar.isHidden = false }
+                    ){
                         Text("\(brand.name!)")
-                        .font(.custom("SF-Pro", size: 18))
+                            .font(.custom("SF-Pro", size: 18))
                     }
                 }
             }
+            .background(TabBarAccessor { tabbar in
+                DispatchQueue.main.async {
+                    self.tabBar = tabbar
+                }
+            })
             .navigationBarTitle("Поиск")
             .embedInNavigationView()
-//        .navigationBarColor(backgroundColor: UIColor(named: "PinkCustom"), titleColor: .white)
     }
 }
 

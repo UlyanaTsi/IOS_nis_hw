@@ -21,22 +21,23 @@ struct MainView: View {
     
     // Меню
     var body: some View {
-        TabView{
-            UserShelfView()
-                .tabItem{
-                    BarImage(imageName: "shelf")
+            TabView{
+                UserShelfView()
+                    .tabItem{
+                        BarImage(imageName: "shelf")
+                }
+                
+                SearchBrandsView()
+                    .tabItem{
+                        BarImage(imageName: "search")
+                        
+                }
+                FavouriteBrandsView()
+                    .tabItem{
+                        BarImage(imageName: "heart")
+                }
             }
-            SearchBrandsView()
-                .tabItem{
-                    BarImage(imageName: "search")
-                    
-            }
-            FavouriteBrandsView()
-                .tabItem{
-                    BarImage(imageName: "heart")
-            }
-        }
-        .accentColor(Color.init("BlueCustom"))
+            .accentColor(Color.init("BlueCustom"))
     }
 }
 
@@ -51,7 +52,6 @@ struct NavigationBarModifier: ViewModifier {
         coloredAppearance.backgroundColor = backgroundColor
         coloredAppearance.titleTextAttributes = [.foregroundColor: titleColor ?? .white]
         coloredAppearance.largeTitleTextAttributes = [.foregroundColor: titleColor ?? .white]
-
         UINavigationBar.appearance().standardAppearance = coloredAppearance
         UINavigationBar.appearance().compactAppearance = coloredAppearance
         UINavigationBar.appearance().scrollEdgeAppearance = coloredAppearance
@@ -67,6 +67,33 @@ struct NavigationBarModifier: ViewModifier {
                         .edgesIgnoringSafeArea(.top)
                     Spacer()
                 }
+            }
+        }
+    }
+}
+
+struct TabBarAccessor: UIViewControllerRepresentable {
+    var callback: (UITabBar) -> Void
+    private let proxyController = ViewController()
+
+    func makeUIViewController(context: UIViewControllerRepresentableContext<TabBarAccessor>) ->
+                              UIViewController {
+        proxyController.callback = callback
+        return proxyController
+    }
+
+    func updateUIViewController(_ uiViewController: UIViewController, context: UIViewControllerRepresentableContext<TabBarAccessor>) {
+    }
+
+    typealias UIViewControllerType = UIViewController
+
+    private class ViewController: UIViewController {
+        var callback: (UITabBar) -> Void = { _ in }
+
+        override func viewWillAppear(_ animated: Bool) {
+            super.viewWillAppear(animated)
+            if let tabBar = self.tabBarController {
+                self.callback(tabBar.tabBar)
             }
         }
     }
