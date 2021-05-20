@@ -89,6 +89,7 @@ struct ItemUpdateView: View {
                     self.itemViewState.itemImage = self.data!
                 }
                 
+                // Проверяем верность заполнения формы
                 if (self.itemViewState.itemMonths.count <= 2  && Int(self.itemViewState.itemMonths) != nil && self.itemViewState.itemName.count > 0){
                     self.itemViewState.itemId = self.item.itemId
                     

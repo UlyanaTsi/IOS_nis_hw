@@ -84,6 +84,7 @@ struct AddItemView: View {
                     self.addItemVM.itemImage = self.data!
                 }
                 
+                // Проверяем верность заполнения формы
                 if (self.addItemVM.itemMonths.count <= 2 && Int(self.addItemVM.itemMonths) != nil && self.addItemVM.itemName.count > 0) {
                     let saved = self.addItemVM.saveItem()
                     if saved {
